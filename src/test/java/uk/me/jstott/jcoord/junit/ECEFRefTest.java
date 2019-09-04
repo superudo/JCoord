@@ -5,24 +5,16 @@ import uk.me.jstott.jcoord.ECEFRef;
 import uk.me.jstott.jcoord.LatLng;
 
 /**
- * <p>
  * ECEFRef unit tests.
- * </p>
- * 
- * <p>
  * (c) 2006 Jonathan Stott
- * </p>
- * 
- * <p>
- * Created on 02-Apr-2006
- * </p>
- * 
+ * Created on 12-Mar-2006
+ *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.1
  */
 public class ECEFRefTest extends TestCase {
-  
+
   /*
    * Test for 'uk.me.jstott.jcoord.ECEFRef(LatLng)'
    */
@@ -33,7 +25,6 @@ public class ECEFRefTest extends TestCase {
     assertEquals(116357.0618, ecef.getY(), 0.01);
     assertEquals(5047492.1819, ecef.getZ(), 0.01);
   }
-
 
   /*
    * Test for 'uk.me.jstott.jcoord.ECEFRef.toLatLng()'

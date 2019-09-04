@@ -7,9 +7,18 @@ import java.util.List;
 
 import uk.me.jstott.jcoord.OSRef;
 
+/**
+ * OSRef unit tests.
+ * (c) 2006 Jonathan Stott
+ * Created on 12-Mar-2006
+ *
+ * @author Jonathan Stott
+ * @version 1.1
+ * @since 1.1
+ */
 public class OSRefTest extends TestCase {
 
-    private final List<Data> data = new ArrayList() {{
+    private final List<Data> data = new ArrayList<Data>() {{
         add(new Data(55.00793350, -1.63509470, "NZ23336822"));
         add(new Data(55.00793350, -1.63509470, "NZ23336822"));
         add(new Data(55.27392830, -2.07162170, "NY95459776"));
@@ -23,7 +32,7 @@ public class OSRefTest extends TestCase {
         add(new Data(55.31509120, -1.55736380, "NU28080242"));
         add(new Data(55.31332170, -1.55670170, "NU28130223"));
     }};
-    
+
     public void testOsRefWithPrecisionOfEightDigits() {
         for (Data d : data) {
             getOsRefWithPrecisionOfEightDigits(d.lat, d.lng, d.osRef);
@@ -36,12 +45,12 @@ public class OSRefTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    private class Data {
+    private static class Data {
         double lat;
         double lng;
         String osRef;
 
-        public Data(double lat, double lng, String osRef) {
+        Data(double lat, double lng, String osRef) {
             this.lat = lat;
             this.lng = lng;
             this.osRef = osRef;

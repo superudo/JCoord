@@ -5,27 +5,16 @@ import uk.me.jstott.jcoord.MGRSRef;
 import uk.me.jstott.jcoord.UTMRef;
 
 /**
- * <p>
  * MGRSRef unit tests.
- * </p>
- * 
- * <p>
  * (c) 2006 Jonathan Stott
- * </p>
- * 
- * <p>
  * Created on 12-Mar-2006
- * </p>
- * 
+ *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.1
  */
 public class MGRSRefTest extends TestCase {
 
-  /*
-   * 
-   */
   public void testMGRSStringConstructor1() {
     assertEquals("32UMU1078", (new MGRSRef("32UMU1078")).toString());
   }
@@ -115,10 +104,6 @@ public class MGRSRefTest extends TestCase {
         0.0), true).toString());
   }
 
-
-  /*
-   * 
-   */
   public void testToUTM() {
     MGRSRef mgrs = new MGRSRef("13SDD4357649756");
     UTMRef utm = mgrs.toUTMRef();
@@ -129,10 +114,6 @@ public class MGRSRefTest extends TestCase {
     assertEquals("13S 443576.0 4349756.0", utm.toString());
   }
 
-
-  /*
-   * 
-   */
   public void testToLatLng() {
     /*
      * Note that no tests are done here for converting an MGRS reference to
@@ -141,5 +122,4 @@ public class MGRSRefTest extends TestCase {
      * See the UTMRefTest.testToLatLng() test.
      */
   }
-
 }

@@ -7,18 +7,10 @@ import uk.me.jstott.jcoord.datum.OSGB36Datum;
 import uk.me.jstott.jcoord.datum.WGS84Datum;
 
 /**
- * <p>
  * LatLng unit tests.
- * </p>
- * 
- * <p>
  * (c) 2006 Jonathan Stott
- * </p>
- * 
- * <p>
  * Created on 12-Mar-2006
- * </p>
- * 
+ *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.1
@@ -37,7 +29,6 @@ public class LatLngTest extends TestCase {
      */
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toUTMRef()'
    */
@@ -49,7 +40,6 @@ public class LatLngTest extends TestCase {
     assertEquals(465005.34, utm.getEasting(), 1.0);
     assertEquals(9329005.18, utm.getNorthing(), 1.0);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toUTMRef()'
@@ -63,7 +53,6 @@ public class LatLngTest extends TestCase {
     assertEquals(1116915.04, utm.getNorthing(), 1.0);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toUTMRef()'
    */
@@ -75,7 +64,6 @@ public class LatLngTest extends TestCase {
     assertEquals(166021.44, utm.getEasting(), 1.0);
     assertEquals(0.0, utm.getNorthing(), 1.0);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toUTMRef()'
@@ -91,7 +79,6 @@ public class LatLngTest extends TestCase {
     // TODO Tests for regions around Norway and Svalbard
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeDegrees()'
    */
@@ -99,7 +86,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(0.0, 0.0);
     assertEquals(0, ll.getLatitudeDegrees());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeDegrees()'
@@ -109,7 +95,6 @@ public class LatLngTest extends TestCase {
     assertEquals(10, ll.getLatitudeDegrees());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeDegrees()'
    */
@@ -117,7 +102,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.0, 0.0);
     assertEquals(-10, ll.getLatitudeDegrees());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeDegrees()'
@@ -127,7 +111,6 @@ public class LatLngTest extends TestCase {
     assertEquals(10, ll.getLatitudeDegrees());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeDegrees()'
    */
@@ -135,7 +118,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.5, 0.0);
     assertEquals(-10, ll.getLatitudeDegrees());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
@@ -145,7 +127,6 @@ public class LatLngTest extends TestCase {
     assertEquals(0, ll.getLatitudeMinutes());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
    */
@@ -153,7 +134,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(10.0, 0.0);
     assertEquals(0, ll.getLatitudeMinutes());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
@@ -163,7 +143,6 @@ public class LatLngTest extends TestCase {
     assertEquals(0, ll.getLatitudeMinutes());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
    */
@@ -171,7 +150,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(10.25, 0.0);
     assertEquals(15, ll.getLatitudeMinutes());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
@@ -181,7 +159,6 @@ public class LatLngTest extends TestCase {
     assertEquals(15, ll.getLatitudeMinutes());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
    */
@@ -189,7 +166,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(10.257, 0.0);
     assertEquals(15, ll.getLatitudeMinutes());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeMinutes()'
@@ -199,7 +175,6 @@ public class LatLngTest extends TestCase {
     assertEquals(15, ll.getLatitudeMinutes());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
    */
@@ -207,7 +182,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(0.0, 0.0);
     assertEquals(0.0, ll.getLatitudeSeconds(), 0.00001);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
@@ -217,7 +191,6 @@ public class LatLngTest extends TestCase {
     assertEquals(0.0, ll.getLatitudeSeconds(), 0.00001);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
    */
@@ -225,7 +198,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.0, 0.0);
     assertEquals(0.0, ll.getLatitudeSeconds(), 0.00001);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
@@ -235,7 +207,6 @@ public class LatLngTest extends TestCase {
     assertEquals(0.0, ll.getLatitudeSeconds(), 0.00001);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
    */
@@ -243,7 +214,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.25, 0.0);
     assertEquals(0.0, ll.getLatitudeSeconds(), 0.00001);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
@@ -253,7 +223,6 @@ public class LatLngTest extends TestCase {
     assertEquals(25.2, ll.getLatitudeSeconds(), 0.00001);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.getLatitudeSeconds()'
    */
@@ -261,7 +230,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.257, 0.0);
     assertEquals(25.2, ll.getLatitudeSeconds(), 0.00001);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
@@ -271,7 +239,6 @@ public class LatLngTest extends TestCase {
     assertEquals("0 0 0.0 N 0 0 0.0 E", ll.toDMSString());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
    */
@@ -279,7 +246,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(10.0, 10.0);
     assertEquals("10 0 0.0 N 10 0 0.0 E", ll.toDMSString());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
@@ -289,7 +255,6 @@ public class LatLngTest extends TestCase {
     assertEquals("10 0 0.0 S 10 0 0.0 W", ll.toDMSString());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
    */
@@ -298,7 +263,6 @@ public class LatLngTest extends TestCase {
     assertEquals("10 15 0.0 N 10 15 0.0 E", ll.toDMSString());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
    */
@@ -306,7 +270,6 @@ public class LatLngTest extends TestCase {
     LatLng ll = new LatLng(-10.25, -10.25);
     assertEquals("10 15 0.0 S 10 15 0.0 W", ll.toDMSString());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
@@ -317,7 +280,6 @@ public class LatLngTest extends TestCase {
         .toDMSString());
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDMSString()'
    */
@@ -326,7 +288,6 @@ public class LatLngTest extends TestCase {
     assertEquals("10 15 25.199999999998823 S 10 15 25.199999999998823 W", ll
         .toDMSString());
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDatum()'
@@ -337,7 +298,6 @@ public class LatLngTest extends TestCase {
     assertEquals(52.65716468040487, ll.getLatitude(), 0.005);
     assertEquals(1.7197915435025186, ll.getLongitude(), 0.005);
   }
-
 
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDatum()'
@@ -350,7 +310,6 @@ public class LatLngTest extends TestCase {
     assertEquals(1.717921580645096, ll.getLongitude(), 0.005);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.LatLng.toDatum()'
    */
@@ -360,5 +319,4 @@ public class LatLngTest extends TestCase {
     assertEquals(52.657570301933156, ll.getLatitude(), 0.005);
     assertEquals(1.717921580645096, ll.getLongitude(), 0.005);
   }
-
 }

@@ -7,24 +7,16 @@ import uk.me.jstott.jcoord.datum.ETRF89Datum;
 import uk.me.jstott.jcoord.datum.Ireland1965Datum;
 
 /**
- * <p>
  * IrishRef unit tests.
- * </p>
- * 
- * <p>
  * (c) 2006 Jonathan Stott
- * </p>
- * 
- * <p>
  * Created on 03-Apr-2006
- * </p>
- * 
+ *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.1
  */
 public class IrishRefTest extends TestCase {
-  
+
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef(String)'
    */
@@ -33,8 +25,7 @@ public class IrishRefTest extends TestCase {
     assertEquals(309900.0, i.getEasting(), 0.1);
     assertEquals(236100.0, i.getNorthing(), 0.1);
   }
-  
-  
+
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef(String)'
    */
@@ -43,7 +34,6 @@ public class IrishRefTest extends TestCase {
     assertEquals(109900.0, i.getEasting(), 0.1);
     assertEquals(336100.0, i.getNorthing(), 0.1);
   }
-  
 
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef.toLatLng()'
@@ -56,7 +46,6 @@ public class IrishRefTest extends TestCase {
     assertEquals(-6.34803286111, ll.getLongitude(), 0.001);
   }
 
-
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef.IrishRef(LatLng)'
    */
@@ -67,8 +56,7 @@ public class IrishRefTest extends TestCase {
     assertEquals(309958.26, i.getEasting(), 150.0);
     assertEquals(236141.93, i.getNorthing(), 150.0);
   }
-  
-  
+
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef.toSixFigureString()'
    */
@@ -76,8 +64,7 @@ public class IrishRefTest extends TestCase {
     IrishRef i = new IrishRef(309958.26, 236141.93);
     assertEquals("O099361", i.toSixFigureString());
   }
-  
-  
+
   /*
    * Test method for 'uk.me.jstott.jcoord.IrishRef.toSixFigureString()'
    */
