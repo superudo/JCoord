@@ -10,19 +10,19 @@ import uk.me.jstott.jcoord.ellipsoid.Airy1830Ellipsoid;
  * href="http://www.jstott.me.uk/jcoord/">Jcoord</a> website for more
  * information.
  * </p>
- * 
+ *
  * <p>
  * Class to represent a latitude/longitude pair based on a particular datum.
  * </p>
- * 
+ *
  * <p>
  * (c) 2006 Jonathan Stott
  * </p>
- * 
+ *
  * <p>
  * Created on 11-02-2006
  * </p>
- * 
+ *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.0
@@ -73,7 +73,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * WGS84 datum.
-   * 
+   *
    * @param latitude
    *          the latitude in degrees. Must be between -90.0 and 90.0 inclusive.
    *          -90.0 and 90.0 are effectively equivalent.
@@ -92,7 +92,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * WGS84 datum.
-   * 
+   *
    * @param latitude
    *          the latitude in degrees. Must be between -90.0 and 90.0 inclusive.
    *          -90.0 and 90.0 are effectively equivalent.
@@ -113,7 +113,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * WGS84 datum.
-   * 
+   *
    * @param latitudeDegrees
    *          the degrees part of the latitude. Must be 0 <= latitudeDegrees <=
    *          90.0.
@@ -155,7 +155,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * WGS84 datum.
-   * 
+   *
    * @param latitudeDegrees
    *          the degrees part of the latitude. Must be 0 <= latitudeDegrees <=
    *          90.0.
@@ -199,7 +199,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * specified datum.
-   * 
+   *
    * @param latitudeDegrees
    *          the degrees part of the latitude. Must be 0 <= latitudeDegrees <=
    *          90.0.
@@ -263,7 +263,7 @@ public class LatLng {
   /**
    * Create a new LatLng object to represent a latitude/longitude pair using the
    * specified datum.
-   * 
+   *
    * @param latitude
    *          the latitude in degrees. Must be between -90.0 and 90.0 inclusive.
    *          -90.0 and 90.0 are effectively equivalent.
@@ -300,7 +300,7 @@ public class LatLng {
 
   /**
    * Get a String representation of this LatLng object.
-   * 
+   *
    * @return a String representation of this LatLng object.
    * @since 1.0
    */
@@ -316,7 +316,7 @@ public class LatLng {
    * number of minutes, SS.SSS is the number of seconds, N is either N or S to
    * indicate north or south of the equator and E is either E or W to indicate
    * east or west of the prime meridian.
-   * 
+   *
    * @return a String representation of this LatLng object in DMS format.
    * @since 1.1
    */
@@ -329,7 +329,7 @@ public class LatLng {
 
   /**
    * Format the latitude into degrees-minutes-seconds format.
-   * 
+   *
    * @return the formatted String
    * @since 1.1
    */
@@ -342,7 +342,7 @@ public class LatLng {
 
   /**
    * Format the longitude into degrees-minutes-seconds format.
-   * 
+   *
    * @return the formatted String.
    * @since 1.1
    */
@@ -356,7 +356,7 @@ public class LatLng {
   /**
    * Convert this latitude and longitude into an OSGB (Ordnance Survey of Great
    * Britain) grid reference.
-   * 
+   *
    * @return the converted OSGB grid reference.
    * @since 1.0
    */
@@ -414,7 +414,7 @@ public class LatLng {
 
   /**
    * Convert this latitude and longitude to a UTM reference.
-   * 
+   *
    * @return the converted UTM reference.
    * @throws NotDefinedOnUTMGridException
    *           if an attempt is made to convert a LatLng that falls outside the
@@ -511,7 +511,7 @@ public class LatLng {
 
   /**
    * Convert this latitude and longitude to an MGRS reference.
-   * 
+   *
    * @return the converted MGRS reference
    * @since 1.1
    */
@@ -524,7 +524,7 @@ public class LatLng {
   /**
    * Convert this LatLng from the OSGB36 datum to the WGS84 datum using an
    * approximate Helmert transformation.
-   * 
+   *
    * @since 1.0
    */
   public void toWGS84() {
@@ -572,8 +572,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @param d
    * @since 1.1
    */
@@ -636,7 +636,7 @@ public class LatLng {
   /**
    * Convert this LatLng from the WGS84 datum to the OSGB36 datum using an
    * approximate Helmert transformation.
-   * 
+   *
    * @since 1.0
    */
   public void toOSGB36() {
@@ -684,10 +684,31 @@ public class LatLng {
   }
 
 
+  public double azimuth(LatLng ll) {
+      double latFrom = Math.toRadians(getLatitude());
+      double latTo = Math.toRadians(ll.getLatitude());
+      double lonFrom = Math.toRadians(getLongitude());
+      double lonTo = Math.toRadians(ll.getLongitude());
+
+      double phi1 = latFrom;
+      double phi2 = latTo;
+      double lambda1 = lonFrom;
+      double lambda2 = lonTo;
+
+      double dLambda = lambda2 - lambda1;
+      double dPhi = phi2 - phi1;
+
+      // θ = atan2 [(sin Δλ ⋅ cos φ₂), (cos φ₁ ⋅ sin φ₂ − sin φ₁ ⋅ cos φ₂ ⋅ cos Δλ)]
+      double a = Math.atan2(Math.sin(dLambda) * Math.cos(phi2),
+          Math.cos(phi1) * Math.sin(phi2) - Math.sin(phi1) * Math.cos(phi2) * Math.cos(dLambda));
+
+      return (a < 0) ? 2 * Math.PI + a : a;
+  }
+
   /**
    * Calculate the surface distance in kilometres from this LatLng to the given
    * LatLng.
-   * 
+   *
    * @param ll
    *          the LatLng object to measure the distance to.
    * @return the surface distance in kilometres.
@@ -712,7 +733,7 @@ public class LatLng {
   /**
    * Calculate the surface distance in miles from this LatLng to the given
    * LatLng.
-   * 
+   *
    * @param ll
    *          the LatLng object to measure the distance to.
    * @return the surface distance in miles.
@@ -722,10 +743,9 @@ public class LatLng {
     return distance(ll) / 1.609344;
   }
 
-
   /**
    * Return the latitude in degrees.
-   * 
+   *
    * @return the latitude in degrees.
    * @since 1.0
    * @deprecated Use {@link #getLatitude() getLatitude()} instead.
@@ -737,7 +757,7 @@ public class LatLng {
 
   /**
    * Return the latitude in degrees.
-   * 
+   *
    * @return the latitude in degrees.
    * @since 1.1
    */
@@ -747,8 +767,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -764,8 +784,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -782,8 +802,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -802,7 +822,7 @@ public class LatLng {
 
   /**
    * Return the longitude in degrees.
-   * 
+   *
    * @return the longitude in degrees.
    * @since 1.0
    * @deprecated Use {@link #getLongitude() getLongitude()} instead.
@@ -814,7 +834,7 @@ public class LatLng {
 
   /**
    * Return the longitude in degrees.
-   * 
+   *
    * @return the longitude in degrees.
    * @since 1.0
    */
@@ -824,8 +844,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -841,8 +861,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -859,8 +879,8 @@ public class LatLng {
 
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    * @since 1.1
    */
@@ -879,7 +899,7 @@ public class LatLng {
 
   /**
    * Get the height.
-   * 
+   *
    * @return the height.
    * @since 1.1
    */
@@ -890,7 +910,7 @@ public class LatLng {
 
   /**
    * Get the datum.
-   * 
+   *
    * @return the datum.
    * @since 1.1
    */

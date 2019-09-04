@@ -1,18 +1,23 @@
-package uk.me.jstott.jcoord.junit;
-
-import junit.framework.TestCase;
-
+package uk.me.jstott.jcoord;
 
 /**
+ * <p>
  * UTMRef unit tests.
+ * </p>
+ *
+ * <p>
  * (c) 2006 Jonathan Stott
+ * </p>
+ *
+ * <p>
  * Created on 12-Mar-2006
+ * </p>
  *
  * @author Jonathan Stott
  * @version 1.1
  * @since 1.1
  */
-public class UTMRefTest extends TestCase {
+public class UTMRefTest {
 
   /*
    * Test method for 'uk.me.jstott.jcoord.UTMRef.UTMRef(int, char, double, double)'
@@ -21,12 +26,14 @@ public class UTMRefTest extends TestCase {
 
   }
 
+
   /*
    * Test method for 'uk.me.jstott.jcoord.UTMRef.toLatLng()'
    */
   public void testToLatLng() {
 
   }
+
 
   /*
    * Test method for 'uk.me.jstott.jcoord.UTMRef.toString()'
